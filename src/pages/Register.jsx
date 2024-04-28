@@ -3,7 +3,7 @@ import { useState } from "react";
 import RegImg from "../assets/register02.png";
 import { Link, useNavigate } from "react-router-dom";
 import uploadCloudinary from "../utils/uploadCloudinary";
-import { ACTIVE_URL, BASE_URL } from "../../config";
+import { ACTIVE_URL, ACTIVE_URL } from "../../config";
 import { toast } from "react-toastify";
 import HashLoader from "react-spinners/HashLoader";
 
@@ -65,7 +65,7 @@ const Register = () => {
       setLoading(true);
 
       try {
-        const res = await fetch(`${BASE_URL}/auth/register`, {
+        const res = await fetch(`${ACTIVE_URL}/auth/register`, {
           method: "post",
           headers: {
             "Content-Type": "application/json",

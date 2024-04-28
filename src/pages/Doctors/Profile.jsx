@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import uploadImageToClodinary from "../../utils/uploadCloudinary";
 import { toast } from "react-toastify";
-import { BASE_URL, token } from "../../../config";
+import { ACTIVE_URL, token } from "../../../config";
 
 const Profile = ({ doctorData }) => {
   const [formData, setFormData] = useState({
@@ -51,14 +51,17 @@ const Profile = ({ doctorData }) => {
   const updateProfileHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${BASE_URL}/doctors/${doctorData._id}/update`, {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        `${ACTIVE_URL}/doctors/${doctorData._id}/update`,
+        {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const result = await res.json();
 

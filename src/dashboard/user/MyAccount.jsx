@@ -4,7 +4,7 @@ import { authContext } from "../../context/AuthContext";
 import MyBookings from "./MyBookings";
 import Profile from "./Profile";
 import useGetProfile from "../../hooks/useFetchData";
-import { BASE_URL } from "../../../config";
+import { ACTIVE_URL } from "../../../config";
 import Loading from "../../components/Loader/Loading";
 import Error from "../../components/Error/Error";
 
@@ -16,7 +16,7 @@ const MyAccount = () => {
     data: userData,
     loading,
     error,
-  } = useGetProfile(`${BASE_URL}/users/profile/me`);
+  } = useGetProfile(`${ACTIVE_URL}/users/profile/me`);
 
   console.log(userData, "userdata");
 

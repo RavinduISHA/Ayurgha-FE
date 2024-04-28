@@ -1,6 +1,6 @@
 // import doctorImage from "../../assets/doctor-img02.png";
 import starIcon from "../../assets/Star.png";
-import { BASE_URL } from "../../../config";
+import { ACTIVE_URL } from "../../../config";
 import Loader from "../../Loader/Loading";
 import Error from "../../Error/Error";
 import useFetchData from "../../hooks/useFetchData";
@@ -17,7 +17,7 @@ const DoctorDetails = () => {
     data: doctor,
     loading,
     error,
-  } = useFetchData(`${BASE_URL}/doctors/${id}`);
+  } = useFetchData(`${ACTIVE_URL}/doctors/${id}`);
 
   const {
     name,

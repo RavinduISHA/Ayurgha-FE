@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ACTIVE_URL, BASE_URL } from "../../config";
+import { ACTIVE_URL, ACTIVE_URL } from "../../config";
 import { toast } from "react-toastify";
 import { authContext } from "../context/AuthContext.jsx";
 import { useContext } from "react";
@@ -45,7 +45,7 @@ const Login = () => {
     if (validationForm()) {
       setLoading(true);
       try {
-        const res = await fetch(`${BASE_URL}/auth/login`, {
+        const res = await fetch(`${ACTIVE_URL}/auth/login`, {
           method: "post",
           headers: {
             "Content-Type": "application/json",

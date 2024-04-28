@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 // import Avatar from "../assets/avatar-icon.png";
 import { useNavigate } from "react-router-dom";
 import uploadCloudinary from "../../utils/uploadCloudinary";
-import { BASE_URL, token } from "../../../config";
+import { ACTIVE_URL, token } from "../../../config";
 import { toast } from "react-toastify";
 import HashLoader from "react-spinners/HashLoader";
 
@@ -52,7 +52,7 @@ const Profile = ({ user }) => {
     setLoading(true);
 
     try {
-      const res = await fetch(`${BASE_URL}/users/${user._id}/update`, {
+      const res = await fetch(`${ACTIVE_URL}/users/${user._id}/update`, {
         method: "put",
         headers: {
           "Content-Type": "application/json",

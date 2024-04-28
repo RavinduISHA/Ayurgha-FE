@@ -1,6 +1,6 @@
 import DoctorCard from "../../components/Doctors/DoctorCard";
 import Testimonial from "../../components/Testimonial/Testimonial";
-import { BASE_URL } from "../../../config";
+import { ACTIVE_URL } from "../../../config";
 import Loader from "../../Loader/Loading";
 import Error from "../../Error/Error";
 import useFetchData from "../../hooks/useFetchData";
@@ -28,7 +28,7 @@ const Doctors = () => {
     data: doctors,
     loading,
     error,
-  } = useFetchData(`${BASE_URL}/doctors?query=${debounceQuery}`);
+  } = useFetchData(`${ACTIVE_URL}/doctors?query=${debounceQuery}`);
   return (
     <>
       <section className="bg-[#fff9ea]">

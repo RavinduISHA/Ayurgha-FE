@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
-import { BASE_URL, token } from "../../../config";
+import { ACTIVE_URL, token } from "../../../config";
 import { HashLoader } from "react-spinners";
 import { toast } from "react-toastify";
 
@@ -22,7 +22,7 @@ const FeedbackForm = () => {
         setLoading(false);
         return toast.error("Rating & review Fileds are required!");
       }
-      const res = await fetch(`${BASE_URL}/doctors/${id}/reviews`, {
+      const res = await fetch(`${ACTIVE_URL}/doctors/${id}/reviews`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",

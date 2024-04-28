@@ -1,7 +1,7 @@
 import Loading from "../../components/Loader/Loading";
 import Error from "../../components/Error/Error";
 import useGetProfile from "../../hooks/useFetchData";
-import { BASE_URL } from "../../../config";
+import { ACTIVE_URL } from "../../../config";
 import Tabs from "./Tabs";
 import { useState } from "react";
 import starIcon from "../../assets/Star.png";
@@ -11,7 +11,7 @@ import Appointments from "../../pages/Doctors/Appointments";
 
 const Dashboard = () => {
   const { data, loading, error } = useGetProfile(
-    `${BASE_URL}/doctors/profile/me`
+    `${ACTIVE_URL}/doctors/profile/me`
   );
 
   const [tab, setTab] = useState("overview");

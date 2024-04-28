@@ -1,11 +1,15 @@
 import DoctorCard from "./DoctorCard";
-import { BASE_URL } from "../../../config";
+import { ACTIVE_URL } from "../../../config";
 import Loader from "../../Loader/Loading";
 import Error from "../../Error/Error";
 import useFetchData from "../../hooks/useFetchData";
 
 const DoctorList = () => {
-  const { data: doctors, loading, error } = useFetchData(`${BASE_URL}/doctors`);
+  const {
+    data: doctors,
+    loading,
+    error,
+  } = useFetchData(`${ACTIVE_URL}/doctors`);
   return (
     <>
       {loading && <Loader />}

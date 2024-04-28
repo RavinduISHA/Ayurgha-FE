@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import convertTime from "../../utils/convertTime";
-import { BASE_URL, token } from "../../../config";
+import { ACTIVE_URL, token } from "../../../config";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
@@ -9,12 +9,15 @@ const SidePanel = ({ doctorId, ticketPrice, timeSlots }) => {
 
   const bookingHandler = async () => {
     try {
-      const res = await fetch(`${BASE_URL}/bookings/add-booking/${doctorId}`, {
-        method: "post",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        `${ACTIVE_URL}/bookings/add-booking/${doctorId}`,
+        {
+          method: "post",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       const data = await res.json();
 
