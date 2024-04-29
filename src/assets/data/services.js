@@ -6,7 +6,7 @@ export const services = [
     textColor: "#FEB60D",
   },
   {
-    name: "bones and joints diseases",
+    name: "Bones and Joints Treatment",
     desc: "World-class care for everyone. Our health System offers unmatched, expert health care. From the lab to the clinic.",
     bgColor: "rgba(151, 113, 255, .2)",
     textColor: "#9771FF",
