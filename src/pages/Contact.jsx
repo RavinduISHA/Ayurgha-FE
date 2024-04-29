@@ -3,7 +3,7 @@ import React from "react";
 const Contact = () => {
   return (
     <section>
-      <div className="px-4 mx-auto max-w-screen-md">
+      <div className="px-4 mx-auto max-w-screen-md md:mt-16">
         <h2 className="heading text-center">Contact Us</h2>
         <p className="mb-8 md:mb-16 lg:mb-16 font-light text-center text_para">
           Got a technical issue? Want to send feedback about a beta feature? Let

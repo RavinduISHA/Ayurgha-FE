@@ -19,7 +19,7 @@ const Home = () => {
     <>
       {/*HERO SECTION */}
       <section className="hero__section pt-[60px] 2xl:h-[800px]">
-        <div className="container">
+        <div className="container md:mt-16">
           <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
             {/*CONTENT */}
             <div>
