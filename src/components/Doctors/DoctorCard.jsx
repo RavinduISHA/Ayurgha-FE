@@ -1,11 +1,41 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import starIcon from "../../assets/Star.png";
 import { BiSolidArrowToRight } from "react-icons/bi";
+import { BASE_URL, token } from "../../../config";
+import { toast } from "react-toastify";
 
 const DoctorCard = ({ doctor }) => {
-  const { name, avgRating, totalRating, photo, specialization, experiences } =
-    doctor;
+  const {
+    name,
+    averageRating,
+    totalRating,
+    photo,
+    specialization,
+    experiences,
+  } = doctor;
+
+  const location = useLocation();
+
+  const isProfileMeRoute = location.pathname === "/users/profile/me";
+
+  const handleStatus = async (bookingId) => {
+    try {
+      const response = await fetch(`${BASE_URL}/bookings/${bookingId}/cancel`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (!response.ok) {
+        throw new Error("Failed to Cancel");
+      }
+      toast.success("Successfully Cancelled");
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
   return (
     <>
@@ -23,7 +53,7 @@ const DoctorCard = ({ doctor }) => {
           <div className="flex items-center gap-[6px]">
             <span className="flex items-center gap-[6px] text-[14px] leading-6 lg:text-[16px] lg:leading-7 font-semibold text-heading">
               <img src={starIcon} alt="" className="" />
-              {avgRating}
+              {averageRating}
             </span>
             <span className="flex items-center gap-[6px] text-[14px] leading-6 lg:text-[16px] lg:leading-7 font-semibold text-text">
               ({totalRating})
@@ -45,6 +75,22 @@ const DoctorCard = ({ doctor }) => {
             <BiSolidArrowToRight className="group-hover:text-white w-6 h-5" />
           </Link>
         </div>
+        {isProfileMeRoute && (
+          <div>
+            {doctor.appointments.map((bookingId) => (
+              <button
+                key={bookingId}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleStatus(bookingId);
+                }}
+                className="p-2 bg-red-600 rounded-md text-white flex justify-center w-full md:mt-2"
+              >
+                Cancel Booking
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

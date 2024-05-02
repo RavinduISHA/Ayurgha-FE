@@ -34,7 +34,7 @@ const SidePanel = ({ doctorId, ticketPrice, timeSlots }) => {
       <div className="flex items-center justify-between">
         <p className="text_para mt-0 font-semibold">Ticket Price</p>
         <span className="text-[16px] leading-7 lg:text-[22px] lg:leading-8 text-heading font-bold">
-          {ticketPrice}
+          {ticketPrice} LKR
         </span>
       </div>
       <div className="mt-[30px]">

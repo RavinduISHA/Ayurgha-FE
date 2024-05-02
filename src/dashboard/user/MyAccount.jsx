@@ -18,7 +18,7 @@ const MyAccount = () => {
     error,
   } = useGetProfile(`${ACTIVE_URL}/users/profile/me`);
 
-  console.log(userData, "userdata");
+  // console.log(userData, "userdata");
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -67,7 +67,7 @@ const MyAccount = () => {
                   Logout
                 </button>
                 <button className="w-full bg-red-600 mt-4 p-3 text-[16px] leading-7 rounded-md text-white">
-                  Deactivated Account
+                  Delete Account
                 </button>
               </div>
             </div>
