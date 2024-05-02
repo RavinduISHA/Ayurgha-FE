@@ -10,7 +10,7 @@ import FaqImg from "../assets/feature-img.png";
 import { BiSolidArrowToRight } from "react-icons/bi";
 import About from "../components/About/About";
 import ServiceList from "../components/Services/ServiceList";
-import DoctorList from "../components/Doctors/DoctorList";
+// import DoctorList from "../components/Doctors/DoctorList";
 import FaqList from "./Faq/FaqList";
 import Testimonial from "../components/Testimonial/Testimonial";
 
@@ -25,7 +25,7 @@ const Home = () => {
             <div>
               <div className="lg:w-[570px]">
                 <h1 className="text-[36px] leading-[46px] text-heading font-[800] md:text-[60px] md:leading-[70px]">
-                  We help to patients live a healthy, longer life.
+                  Our ayurvedic treatment help to patients live a healthy life.
                 </h1>
                 <p className="text_para">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
@@ -33,7 +33,9 @@ const Home = () => {
                   temporibus repellat fugit repellendus!
                 </p>
 
-                <button className="btn">Request an Appointment</button>
+                <button className="btn">
+                  <Link to="/doctors">Request an Appointment</Link>
+                </button>
               </div>
 
               <div className="mt-[30px] lg:mt-[70px] flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-[30px]">
@@ -121,7 +123,7 @@ const Home = () => {
                 </p>
 
                 <Link
-                  to="/doctors"
+                  to="https://www.google.com/maps"
                   className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primary hover:bg-none"
                 >
                   <BiSolidArrowToRight className="group-hover:text-white w-6 h-5" />
@@ -232,7 +234,7 @@ const Home = () => {
       {/* End FEATURE*/}
 
       {/*DOCTORS */}
-      <section>
+      {/* <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
             <h2 className="text-[26px] leading-9 text-heading font-[700] text-center">
@@ -245,7 +247,7 @@ const Home = () => {
           </div>
           <DoctorList />
         </div>
-      </section>
+      </section> */}
       {/* End DOCTORS */}
 
       {/* faq */}
