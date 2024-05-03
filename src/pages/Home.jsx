@@ -58,10 +58,14 @@ const Home = () => {
 
             <div className="flex gap-[30px] justify-end">
               <div>
-                <img className="w-full h-full" src={featureImg} alt="" />
+                <img
+                  className="w-full h-full rounded-lg"
+                  src={featureImg}
+                  alt=""
+                />
               </div>
               <div className="mt-[30px]">
-                <img src={heroImg} alt="" className="w-full" />
+                <img src={heroImg} alt="" className="w-3/4 rounded-lg" />
               </div>
             </div>
           </div>
@@ -199,7 +203,7 @@ const Home = () => {
             </div>
 
             <div className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0">
-              <img src={featureImg} alt="" className="w-3/4" />
+              <img src={featureImg} alt="" className="w-3/4 rounded-lg" />
 
               <div className="w-[150px] lg:w-[248px] bg-white absolute bottom-[50px] left-0 md:bootom-[100px] md:left-5 z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px]">
                 <div className="flex items-center justify-between">
