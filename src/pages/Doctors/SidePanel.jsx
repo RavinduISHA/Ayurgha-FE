@@ -20,21 +20,23 @@ const SidePanel = ({ doctorId, ticketPrice, timeSlots }) => {
       );
 
       const data = await res.json();
+      console.log(data);
 
       if (!res.ok) {
-        throw new Error(data.message + "Please try again");
+        throw new Error(data.message + " Please try again");
       }
       navigate("/users/profile/me");
     } catch (err) {
       toast.error(err.message);
     }
   };
+
   return (
     <div className="shadow-panelShadow p-3 lg:p-5 rounded-md">
       <div className="flex items-center justify-between">
         <p className="text_para mt-0 font-semibold">Ticket Price</p>
         <span className="text-[16px] leading-7 lg:text-[22px] lg:leading-8 text-heading font-bold">
-          {ticketPrice}
+          {ticketPrice} LKR
         </span>
       </div>
       <div className="mt-[30px]">

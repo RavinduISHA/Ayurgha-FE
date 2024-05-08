@@ -47,7 +47,7 @@ const quickLinks01 = [
 
 const quickLinks02 = [
   {
-    path: "/home",
+    path: "/doctors",
     display: "Find a Doctor",
   },
   {
@@ -55,7 +55,7 @@ const quickLinks02 = [
     display: "Request an Appointment",
   },
   {
-    path: "/services",
+    path: "/home",
     display: "Find a Location",
   },
   {

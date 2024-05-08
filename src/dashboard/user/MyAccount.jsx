@@ -4,9 +4,10 @@ import { authContext } from "../../context/AuthContext";
 import MyBookings from "./MyBookings";
 import Profile from "./Profile";
 import useGetProfile from "../../hooks/useFetchData";
-import { ACTIVE_URL } from "../../../config";
+import { ACTIVE_URL, token } from "../../../config";
 import Loading from "../../components/Loader/Loading";
 import Error from "../../components/Error/Error";
+import { toast } from "react-toastify";
 
 const MyAccount = () => {
   const { dispatch } = useContext(authContext);
@@ -18,15 +19,38 @@ const MyAccount = () => {
     error,
   } = useGetProfile(`${ACTIVE_URL}/users/profile/me`);
 
-  console.log(userData, "userdata");
+  // console.log(userData, "userdata");
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
   };
 
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(`${ACTIVE_URL}/users/${userData._id}/delete`, {
+        method: "delete",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const { message } = await res.json();
+
+      if (!res.ok) {
+        throw new Error(message);
+      }
+
+      toast.success(message);
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
+
   return (
     <section>
-      <div className="max-w-[1178px] px-5 mx-auto">
+      <div className="max-w-[1178px] px-5 mx-auto md:mt-16">
         {loading && !error && <Loading />}
 
         {error && !loading && <Error errMessage={error} />}
@@ -66,8 +90,11 @@ const MyAccount = () => {
                 >
                   Logout
                 </button>
-                <button className="w-full bg-red-600 mt-4 p-3 text-[16px] leading-7 rounded-md text-white">
-                  Deactivated Account
+                <button
+                  onClick={handleDelete}
+                  className="w-full bg-red-600 mt-4 p-3 text-[16px] leading-7 rounded-md text-white"
+                >
+                  Delete Account
                 </button>
               </div>
             </div>

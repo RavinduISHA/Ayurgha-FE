@@ -29,8 +29,8 @@ const About = () => {
               Voluptates, possimus.
             </p>
 
-            <Link to="/">
-              <button className="btn">Learn More</button>
+            <Link to="/services">
+              <button className="btn">Provide Services</button>
             </Link>
           </div>
         </div>
