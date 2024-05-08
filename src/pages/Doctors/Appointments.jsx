@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import { toast } from "react-toastify";
-import { BASE_URL, token } from "../../../config";
+import { ACTIVE_URL, token } from "../../../config";
 import Swal from "sweetalert2";
 
 const Appointments = ({ appointments }) => {
   const handleDelete = async (bookingId) => {
     try {
-      await fetch(`${BASE_URL}/bookings/delete-booking/${bookingId}`, {
+      await fetch(`${ACTIVE_URL}/bookings/delete-booking/${bookingId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -22,7 +22,7 @@ const Appointments = ({ appointments }) => {
   const handleStatus = async (bookingId) => {
     try {
       const response = await fetch(
-        `${BASE_URL}/bookings/${bookingId}/approve`,
+        `${ACTIVE_URL}/bookings/${bookingId}/approve`,
         {
           method: "PUT",
           headers: {

@@ -2,7 +2,7 @@
 import { Link, useLocation } from "react-router-dom";
 import starIcon from "../../assets/Star.png";
 import { BiSolidArrowToRight } from "react-icons/bi";
-import { BASE_URL, token } from "../../../config";
+import { ACTIVE_URL, token } from "../../../config";
 import { toast } from "react-toastify";
 
 const DoctorCard = ({ doctor }) => {
@@ -13,6 +13,7 @@ const DoctorCard = ({ doctor }) => {
     photo,
     specialization,
     experiences,
+    appointments,
   } = doctor;
 
   const location = useLocation();
@@ -21,7 +22,7 @@ const DoctorCard = ({ doctor }) => {
 
   const handleStatus = async (bookingId) => {
     try {
-      const response = await fetch(`${BASE_URL}/bookings/${bookingId}/cancel`, {
+      const response = await fetch(`${ACTIVE_URL}/bookings/${bookingId}/cancel`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -77,18 +78,20 @@ const DoctorCard = ({ doctor }) => {
         </div>
         {isProfileMeRoute && (
           <div>
-            {doctor.appointments.map((bookingId) => (
-              <button
-                key={bookingId}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleStatus(bookingId);
-                }}
-                className="p-2 bg-red-600 rounded-md text-white flex justify-center w-full md:mt-2"
-              >
-                Cancel Booking
-              </button>
-            ))}
+            {appointments
+              .filter((appointment) => appointment.status === "pending")
+              .map((appointment) => (
+                <button
+                  key={appointment._id}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleStatus(appointment._id);
+                  }}
+                  className="p-2 bg-red-600 rounded-md text-white flex justify-center w-full md:mt-2"
+                >
+                  Cancel Booking
+                </button>
+              ))}
           </div>
         )}
       </div>

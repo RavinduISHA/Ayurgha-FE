@@ -55,7 +55,7 @@ const DoctorAbout = ({ name, about, qualifications, experiences }) => {
           })}
         </ul>
       </div>
-      <div className="mt-12">
+      <div className="">
         <h3 className="text-[20px] leading-[30px] text-heading font-semibold">
           Experience
         </h3>

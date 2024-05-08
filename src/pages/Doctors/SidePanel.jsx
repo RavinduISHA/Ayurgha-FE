@@ -20,15 +20,17 @@ const SidePanel = ({ doctorId, ticketPrice, timeSlots }) => {
       );
 
       const data = await res.json();
+      console.log(data);
 
       if (!res.ok) {
-        throw new Error(data.message + "Please try again");
+        throw new Error(data.message + " Please try again");
       }
       navigate("/users/profile/me");
     } catch (err) {
       toast.error(err.message);
     }
   };
+
   return (
     <div className="shadow-panelShadow p-3 lg:p-5 rounded-md">
       <div className="flex items-center justify-between">
