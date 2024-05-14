@@ -19,7 +19,7 @@ const Home = () => {
     <>
       {/*HERO SECTION */}
       <section className="hero__section pt-[60px] 2xl:h-[800px]">
-        <div className="container md:mt-16">
+        <div className="container md:mt-16 mt-16">
           <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
             {/*CONTENT */}
             <div>
@@ -259,7 +259,7 @@ const Home = () => {
         <div className="container">
           <div className="flex justify-between gap-[50px] lg:gap-0">
             <div className="w-1/2 hidden md:block">
-              <img src={FaqImg} alt="" />
+              <img src={FaqImg} alt="" className="rounded-md" />
             </div>
 
             <div className="w-full md:w-1/2">

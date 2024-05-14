@@ -18,7 +18,7 @@ const Dashboard = () => {
 
   return (
     <section>
-      <div className="max-w-[1170px] px-5 mx-auto md:mt-16">
+      <div className="max-w-[1170px] px-5 mx-auto md:mt-16 mt-16">
         {loading && !error && <Loading />}
 
         {error && !loading && <Error errMessage={error} />}

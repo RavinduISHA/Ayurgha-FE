@@ -14,6 +14,7 @@ const Appointments = ({ appointments }) => {
         },
       });
       toast.success("Successfully Deleted");
+      window.location.reload();
     } catch (err) {
       toast.error(err.message);
     }
@@ -35,6 +36,7 @@ const Appointments = ({ appointments }) => {
         throw new Error("Failed to change booking status");
       }
       toast.success("Successfully Cheked the Booking");
+      window.location.reload();
     } catch (error) {
       toast.error(error.message);
     }

@@ -68,11 +68,12 @@ const Login = () => {
           },
         });
 
-        console.log(result, "Login Data");
+        // console.log(result, "Login Data");
 
         setLoading(false);
         toast.success(result.message);
         navigate("/home");
+        window.location.reload();
       } catch (err) {
         toast.error(err.message);
         setLoading(false);
@@ -82,7 +83,7 @@ const Login = () => {
 
   return (
     <section className="px-5 lg:px-0">
-      <div className="w-full max-w-[570px] mx-auto rounded-lg shadow-md md:p-10 md:mt-16">
+      <div className="w-full max-w-[570px] mx-auto rounded-lg shadow-md md:p-10 md:mt-16 mt-16">
         <h3 className="text-headingColor text-[22px] leading-9 font-bold mb-10">
           Hello! <span className="text-primary">Welcome </span>Back 🎉
         </h3>
