@@ -82,7 +82,7 @@ const Footer = () => {
     <footer className="pb-16 pt-10">
       <div className="container">
         <div className="flex justify-between flex-col md:flex-row flex-warp gap-[30px]">
-          <div>
+          <div className="text-center md:text-start">
             {/* <img src={logo} alt="" className="w-48 h-20" /> */}
             <p className="font-bold text-black text-xl">Ayurgha</p>
             <p className="text-[16px] leading-7 font-[400] text-textColor mt-4">
@@ -95,7 +95,7 @@ const Footer = () => {
               </a>
             </p>
 
-            <div className="flex items-center gap-3 mt-4">
+            <div className="flex items-center justify-center md:justify-start gap-3 mt-4">
               {socialLinks.map((link, index) => (
                 <Link
                   to={link.path}
@@ -108,7 +108,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className="text-center md:text-start">
             <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-heading">
               Quick Links
             </h2>
@@ -126,7 +126,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center md:text-start">
             <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-heading">
               I want to:{" "}
             </h2>
@@ -144,7 +144,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center md:text-start">
             <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-heading">
               Support
             </h2>
