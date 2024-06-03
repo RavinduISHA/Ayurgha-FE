@@ -33,7 +33,7 @@ const Home = () => {
                   temporibus repellat fugit repellendus!
                 </p>
 
-                <button className="btn">
+                <button className="btn transition-all hover:text-primary hover:bg-white">
                   <Link to="/doctors">Request an Appointment</Link>
                 </button>
               </div>
@@ -198,7 +198,9 @@ const Home = () => {
                 </li>
               </ul>
               <Link to="/">
-                <button className="btn">Learn More</button>
+                <button className="btn transition-all hover:text-primary hover:bg-white">
+                  Learn More
+                </button>
               </Link>
             </div>
 

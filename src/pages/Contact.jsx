@@ -99,7 +99,10 @@ const Contact = () => {
               </span>
             )}
           </div>
-          <button type="submit" className="btn rounded sm:w-fit">
+          <button
+            type="submit"
+            className="btn rounded sm:w-fit transition-all hover:text-primary hover:bg-white"
+          >
             Submit
           </button>
         </form>
