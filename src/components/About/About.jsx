@@ -30,7 +30,9 @@ const About = () => {
             </p>
 
             <Link to="/services">
-              <button className="btn">Services</button>
+              <button className="btn transition-all hover:text-primary hover:bg-white">
+                More Services
+              </button>
             </Link>
           </div>
         </div>
